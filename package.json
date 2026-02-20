@@ -1,36 +1,29 @@
 {
-  "name": "@fetcherpay/node",
+  "name": "fetcherpay-sdk",
   "version": "1.0.0",
-  "description": "FetcherPay Node.js SDK",
+  "description": "FetcherPay Node.js SDK - One API. Every Rail.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "lint": "eslint src/**/*.ts",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["payments", "fintech", "api", "fetcherpay"],
-  "author": "FetcherPay",
+  "keywords": ["payments", "fintech", "api", "fetcherpay", "ach", "rtp"],
+  "author": "FetcherPay <garfield@fetcherpay.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fetcherpay/fetcherpay-node.git"
+  },
   "dependencies": {
-    "axios": "^1.5.0",
-    "crypto": "^1.0.1"
+    "axios": "^1.5.0"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.0",
     "tslib": "^2.6.0",
-    "@types/jest": "^29.5.0",
-    "@types/node": "^20.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "eslint": "^8.0.0",
-    "jest": "^29.5.0",
     "rollup": "^3.29.0",
-    "ts-jest": "^29.1.0",
     "typescript": "^5.0.0"
   }
 }
