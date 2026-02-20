@@ -3,6 +3,7 @@ name: Publish to npm
 on:
   release:
     types: [created]
+  workflow_dispatch:
 
 jobs:
   publish:
@@ -16,12 +17,15 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
-      - run: npm install tslib typescript rollup @rollup/plugin-typescript
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install tslib --save-dev
 
-      - run: npm install
+      - name: Build
+        run: npm run build
 
-      - run: npm run build
-
-      - run: npm publish --access public
+      - name: Publish to npm
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
